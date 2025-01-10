@@ -27,7 +27,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: RangHo/setup-arch@v1.2.1
         with:
-          packages: python pacman
+          packages: python
 
       - name: Create SSH key
         shell: bash
