@@ -33,12 +33,11 @@ jobs:
         shell: bash
         env:
           SUPER_SECRET: ${{ secrets.AUR_SSH_KEY }}
-          SUPER_PUB: ${{ secrets.AUR_SSH_PUB }}
         run: |
           mkdir -p ~/.ssh/
-          echo "$SUPER_SECRET" > ~/.ssh/id_ed25519
-          echo "$SUPER_PUB" > ~/.ssh/id_ed25519.pub
+          printf "%s" "$SUPER_SECRET" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/*
+          ssh -i ~/.ssh/id_ed25519 -T aur@aur.archlinux.org
           ssh -T aur@aur.archlinux.org
 
       - name: Run check version script
