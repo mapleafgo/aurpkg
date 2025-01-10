@@ -39,10 +39,14 @@ jobs:
           chmod 600 ~/.ssh/*
           ssh-keyscan aur.archlinux.org >> ~/.ssh/known_hosts
 
-      - name: Run check version script
+      - name: get submodule
         shell: bash
         run: |
           git submodule update --init
+
+      - name: Run check version script
+        shell: arch.sh {0}
+        run: |
           ./check_version.sh
 
       - name: git push changes
