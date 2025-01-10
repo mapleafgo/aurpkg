@@ -38,7 +38,6 @@ jobs:
           echo "$SUPER_SECRET" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/*
           ssh-keyscan aur.archlinux.org >> ~/.ssh/known_hosts
-          ssh -i ~/.ssh/id_ed25519 -T aur@aur.archlinux.org
 
       - name: Run check version script
         shell: bash
