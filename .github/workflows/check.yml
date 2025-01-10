@@ -35,8 +35,8 @@ jobs:
           SUPER_SECRET: ${{ secrets.AUR_SSH_KEY }}
         run: |
           mkdir -p ~/.ssh/
-          echo "$SUPER_SECRET"
           echo "$SUPER_SECRET" > ~/.ssh/id_ed25519
+          cat ~/.ssh/id_ed25519
           ssh -T aur@aur.archlinux.org
 
       - name: Run check version script
