@@ -37,8 +37,7 @@ jobs:
           mkdir -p ~/.ssh/
           echo "$SUPER_SECRET" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/*
-          echo "$SUPER_SECRET" | wc -c
-          cat ~/.ssh/id_ed25519 | wc -c
+          ssh-keyscan aur.archlinux.org >> ~/.ssh/known_hosts
           ssh -i ~/.ssh/id_ed25519 -T aur@aur.archlinux.org
 
       - name: Run check version script
