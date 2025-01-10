@@ -1,0 +1,12 @@
+[submodule "apipost-bin"]
+	path = apipost-bin
+	url = ssh://aur@aur.archlinux.org/apipost-bin.git
+[submodule "linux-wechat"]
+	path = linux-wechat
+	url = ssh://aur@aur.archlinux.org/linux-wechat.git
+[submodule "mqttx-appimage"]
+	path = mqttx-appimage
+	url = ssh://aur@aur.archlinux.org/mqttx-appimage.git
+[submodule "pnpm-bin"]
+	path = pnpm-bin
+	url = ssh://aur@aur.archlinux.org/pnpm-bin.git
