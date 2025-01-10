@@ -38,7 +38,6 @@ jobs:
           printf "%s" "$SUPER_SECRET" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/*
           ssh -i ~/.ssh/id_ed25519 -T aur@aur.archlinux.org
-          ssh -T aur@aur.archlinux.org
 
       - name: Run check version script
         shell: bash
