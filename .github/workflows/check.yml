@@ -33,7 +33,8 @@ jobs:
         env:
           SUPER_SECRET: ${{ secrets.AUR_SSH_KEY }}
         run: |
-          echo "$SUPER_SECRET" > ../id_ed25519
+          cd ..
+          echo "$SUPER_SECRET" > id_ed25519
           git config --global core.sshCommand "ssh -i $PWD/id_ed25519"
 
       - name: Run check version script
