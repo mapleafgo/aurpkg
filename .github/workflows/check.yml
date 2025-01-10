@@ -30,7 +30,9 @@ jobs:
           packages: python
 
       - name: Run check version script
-        run: ./check_version.sh
+        run: |
+          git submodule update --init
+          ./check_version.sh
 
       - name: git push changes
         run: |
