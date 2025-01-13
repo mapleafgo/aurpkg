@@ -13,4 +13,3 @@ for dir in */; do
 done
 
 echo "All tasks completed."
-
