@@ -49,4 +49,4 @@ jobs:
           git config user.name "actions-user"
           git config user.email "<>"
           git add *
-          git diff-index --quiet HEAD || git commit -a -m "Update from Github Action" && git push --recurse-submodules=on-demand git@github.com:${{ github.repository  }}.git
+          git diff-index --quiet HEAD || git commit -a -m "Update from Github Action" && git push origin/master --recurse-submodules=on-demand git@github.com:${{ github.repository  }}.git
