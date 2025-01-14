@@ -40,6 +40,8 @@ jobs:
       - name: Run check version script
         shell: arch.sh {0}
         run: |
+          git config --global user.name "actions-user"
+          git config --global user.email "<>"
           ./check_version.sh
 
       - name: git push changes
