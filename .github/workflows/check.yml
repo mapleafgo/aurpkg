@@ -21,7 +21,6 @@ jobs:
       - uses: actions/checkout@main
         with:
           submodules: 'recursive'
-          fetch-depth: 0
 
       - uses: RangHo/setup-arch@v1.2.1
         with:

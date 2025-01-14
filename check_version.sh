@@ -7,7 +7,7 @@ for dir in */; do
     echo "Executing $dir/pkgbuild_helper.py..."
     # 进入目录并执行文件，忽略错误
     (
-      cd "$dir" && python3 pkgbuild_helper.py || echo "Error occurred in $dir, skipping..."
+      cd "$dir" && git checkout master && python3 pkgbuild_helper.py || echo "Error occurred in $dir, skipping..."
     )
   fi
 done
