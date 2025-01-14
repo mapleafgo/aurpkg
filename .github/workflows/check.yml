@@ -22,7 +22,7 @@ jobs:
 
       - uses: RangHo/setup-arch@v1.2.1
         with:
-          packages: python
+          packages: python git
 
       - name: Create SSH key
         env:
