@@ -38,7 +38,7 @@ jobs:
 
       - name: get submodule
         run: |
-          git submodule update --init
+          git submodule update --remote --recursive
 
       - name: Run check version script
         shell: arch.sh {0}
