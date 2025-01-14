@@ -44,9 +44,13 @@ jobs:
           git config --global user.email "<>"
           ./check_version.sh
 
-      - name: git push changes
+      - name: Commit files
         run: |
-          git config user.name "actions-user"
-          git config user.email "<>"
-          git add *
-          git diff-index --quiet HEAD || git commit -a -m "Update from Github Action" && git push HEAD:master --recurse-submodules=on-demand git@github.com:${{ github.repository  }}.git
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git commit -a -m "Update from Github Action"
+
+      - name: git push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: master
