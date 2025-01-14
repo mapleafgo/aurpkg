@@ -19,16 +19,22 @@ jobs:
 
     steps:
       - uses: actions/checkout@main
-        with:
-          ssh-key: ${{ secrets.AUR_SSH_KEY }}
-          ssh-known-hosts: aur.archlinux.org
-          ssh-strict: false
-          submodules: 'recursive'
-          fetch-depth: 0
 
       - uses: RangHo/setup-arch@v1.2.1
         with:
           packages: python git
+
+      - name: Create SSH key
+        env:
+          SUPER_SECRET: ${{ secrets.AUR_SSH_KEY }}
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SUPER_SECRET" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/*
+          ssh-keyscan aur.archlinux.org >> ~/.ssh/known_hosts
+
+      - name: get submodules
+        run: git submodule update --init --recursive
 
       - name: Run check version script
         shell: arch.sh {0}
