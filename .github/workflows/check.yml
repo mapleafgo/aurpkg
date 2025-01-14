@@ -20,7 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@main
 
-      - uses: RangHo/setup-arch@v1.2.1
+      - uses: RangHo/setup-arch@main
         with:
           packages: python git
 
