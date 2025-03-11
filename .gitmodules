@@ -1,3 +1,6 @@
+[submodule "deepchat"]
+	path = deepchat
+	url = ssh://aur@aur.archlinux.org/deepchat.git
 [submodule "apipost-bin"]
 	path = apipost-bin
 	url = ssh://aur@aur.archlinux.org/apipost-bin.git
