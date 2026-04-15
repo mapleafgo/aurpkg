@@ -7,6 +7,3 @@
 [submodule "mqttx-appimage"]
 	path = mqttx-appimage
 	url = ssh://aur@aur.archlinux.org/mqttx-appimage.git
-[submodule "pnpm-bin"]
-	path = pnpm-bin
-	url = ssh://aur@aur.archlinux.org/pnpm-bin.git
