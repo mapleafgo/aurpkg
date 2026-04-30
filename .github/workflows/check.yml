@@ -22,7 +22,9 @@ jobs:
 
     steps:
       - name: Install git (required by checkout action)
-        run: pacman -Sy --noconfirm git
+        run: |
+          pacman -Sy --noconfirm git
+          git config --global --add safe.directory /__w/aurpkg/aurpkg
 
       - uses: actions/checkout@v6
 
