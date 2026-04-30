@@ -17,6 +17,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container: archlinux:latest
+    env:
+      GIT_DISCOVERY_ACROSS_FILESYSTEM: 1
 
     steps:
       - uses: actions/checkout@v6
