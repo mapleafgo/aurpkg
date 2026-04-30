@@ -19,6 +19,7 @@ jobs:
     container: archlinux:latest
     env:
       GIT_DISCOVERY_ACROSS_FILESYSTEM: 1
+      GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no -i $HOME/.ssh/id_ed25519"
 
     steps:
       - name: Install git (required by checkout action)
@@ -41,8 +42,6 @@ jobs:
           chmod 600 ~/.ssh/id_ed25519
 
       - name: Init submodules
-        env:
-          GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no -i $HOME/.ssh/id_ed25519"
         run: git submodule update --init --recursive
 
       - name: Run check version script
