@@ -21,10 +21,13 @@ jobs:
       GIT_DISCOVERY_ACROSS_FILESYSTEM: 1
 
     steps:
+      - name: Install git (required by checkout action)
+        run: pacman -Sy --noconfirm git
+
       - uses: actions/checkout@v6
 
-      - name: Install dependencies
-        run: pacman -Syu --noconfirm python git openssh base-devel
+      - name: Install remaining dependencies
+        run: pacman -S --noconfirm python openssh base-devel
 
       - name: Create SSH key
         env:
