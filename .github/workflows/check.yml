@@ -44,11 +44,16 @@ jobs:
       - name: Init submodules
         run: git submodule update --init --recursive
 
+      - name: Setup build user
+        run: |
+          useradd -m builduser
+          chown -R builduser:builduser .
+
       - name: Run check version script
         run: |
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --global user.name "github-actions[bot]"
-          ./check_version.sh
+          su builduser -c "git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'"
+          su builduser -c "git config --global user.name 'github-actions[bot]'"
+          su builduser -c "./check_version.sh"
 
       - name: Commit changes and push
         run: |
