@@ -36,13 +36,13 @@ jobs:
           SUPER_SECRET: ${{ secrets.AUR_SSH_KEY }}
         run: |
           mkdir -p ~/.ssh/
+          chmod 700 ~/.ssh/
           echo "$SUPER_SECRET" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -t ed25519,rsa aur.archlinux.org >> ~/.ssh/known_hosts
 
       - name: Init submodules
         env:
-          GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
+          GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no -i $HOME/.ssh/id_ed25519"
         run: git submodule update --init --recursive
 
       - name: Run check version script
