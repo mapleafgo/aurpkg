@@ -7,3 +7,6 @@
 [submodule "mqttx-appimage"]
 	path = mqttx-appimage
 	url = ssh://aur@aur.archlinux.org/mqttx-appimage.git
+[submodule "singcast"]
+	path = singcast
+	url = ssh://aur@aur.archlinux.org/singcast.git
