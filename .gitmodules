@@ -13,3 +13,6 @@
 [submodule "singcast-cli"]
 	path = singcast-cli
 	url = ssh://aur@aur.archlinux.org/singcast-cli.git
+[submodule "mailmaster"]
+	path = mailmaster
+	url = ssh://aur@aur.archlinux.org/mailmaster.git
