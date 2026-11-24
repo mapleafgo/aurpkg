@@ -16,6 +16,3 @@
 [submodule "mailmaster"]
 	path = mailmaster
 	url = ssh://aur@aur.archlinux.org/mailmaster.git
-[submodule "winc"]
-	path = winc
-	url = ssh://aur@aur.archlinux.org/winc.git
